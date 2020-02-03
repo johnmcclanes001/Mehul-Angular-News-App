@@ -1,0 +1,29 @@
+    <!--================Fullwidth block Area =================-->
+
+    <section class="fullwidth-block area-padding-bottom">
+      <div class="container-fluid">
+        <div class="row">
+
+          <ng-container *ngFor="let article of articles | keyvalue">
+            <ng-container *ngIf="article.key == 0 || article.key % 4  == 0;">
+              <div class="clearfix"></div>
+            </ng-container>
+            <div class="col-md-6 col-lg-6 col-xl-6">
+                <app-news-cards 
+                  [category]= "category" 
+                  [title]= "article.value.title"
+                  [publishedDt] = "article.value.publishedAt"
+                  [author] = "article.value.author"
+                  [url] = "article.value.url"
+                  [urlToImage] = "article.value.urlToImage"
+                  >
+                </app-news-cards>
+            </div>
+            
+          </ng-container>
+ 
+        </div>
+      </div>
+    </section>
+
+    <!--================Fullwidth block Area end =================-->
